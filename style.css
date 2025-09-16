@@ -1,0 +1,215 @@
+ body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f9f9f9;
+    margin: 0;
+  }
+    .moving-banner {
+    width: 100%;
+    overflow: hidden;
+    background: #f7d23a;
+    border-bottom: 2px solid #093e6f;
+    color: #093e6f;
+    font-weight: bold;
+    font-size: 1.12em;;
+    padding: 9px 0;
+    position: relative;
+  }
+  .moving-banner span {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-left 12s linear infinite;
+  }
+  @keyframes scroll-left {
+    0% { transform: translateX(100%);}
+    100% { transform: translateX(-100%);}
+  }
+
+  .header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #093e6f;
+    padding: 16px 0 10px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+  }
+  .header-content {
+    flex: 1;
+    text-align: center;
+    color: #fff;
+  }
+  .header-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin: 0 25px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 5px;
+  }
+  @media (max-width:600px) {
+    .header-logo {
+      width: 42px;
+      height: 42px;
+      margin: 0 7px;
+    }
+  }
+  .container {
+    max-width: 900px;
+    margin: 24px auto;
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+  
+  .tabs {
+    display: flex;
+    border-bottom: 2px solid #eee;
+    flex-wrap: wrap;
+  }
+  .tab-label {
+    flex: 1;
+    padding: 14px;
+    text-align: center;
+    background: #f2f2f2;
+    color: #093e6f;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-right: 1px solid #eee;
+    font-weight: 600;
+    box-sizing: border-box;
+    border-radius: 5%;
+  }
+  .tab-label:hover {
+  background: #0b4b8a;
+  color: #fff;
+}
+  .tab-label:last-child {
+    border-right: none;
+  }
+  input[type="radio"] {
+    display: none;
+  }
+  input[type="radio"]:checked + label {
+    background: #093e6f;
+    color: #fff;
+  }
+  .tab-content {
+    display: none;
+    padding: 20px 8px 0 8px;
+  }
+  #tab1:checked ~ #content1,
+  #tab2:checked ~ #content2,
+  #tab3:checked ~ #content3,
+  #tab4:checked ~ #content4,
+  #tab5:checked ~ #content5,
+  #tab6:checked ~ #content6 {
+    display: block;
+  }
+  .overview-block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+  .overview-image {
+    flex: 1 1 220px;
+    max-width: 260px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(9,62,111,0.08);
+    margin-right: 24px;
+  }
+  .overview-text {
+    flex: 2 1 320px;
+    background: #e9f1fa;
+    padding: 18px;
+    border-radius: 10px;
+    color: #26528e;
+    font-size: 1.07em;
+    box-shadow: 0 2px 6px rgba(9,62,111,0.05);
+  }
+  .overview-title {
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #093e6f;
+    margin-bottom: 7px;
+  }
+  /* Center image above text only for first overview block */
+  .overview-block:first-child {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .overview-block:first-child .overview-image {
+    margin: 0 0 16px 0;
+    max-width: 320px;
+    width: 100%;
+  }
+  .overview-block:first-child .overview-text {
+    flex: none;
+  }
+  @media (max-width:700px) {
+    .overview-block {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .overview-image {
+      margin: 0 auto 14px auto;
+      width: 100%;
+      max-width: 260px;
+    }
+    .overview-text {
+      width: 100%;
+    }
+  }
+  .staff {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .staff-member {
+    background: #f7f7fa;
+    border-radius: 6px;
+    padding: 12px;
+    flex: 1;
+    min-width: 200px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .staff-member img {
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    margin: 0 auto 8px auto;
+    display: block;
+  }
+  .map-container {
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  footer {
+    background: #093e6f;
+    color: #fff;
+    text-align: center;
+    padding: 16px 0;
+    margin-top: 32px;
+  }
+  @media (max-width:600px) {
+    .container {
+      padding: 10px;
+    }
+    .staff {
+      flex-direction: column;
+    }
+    .tabs {
+      flex-direction: column;
+    }
+    .tab-label {
+      border-right: none;
+      border-bottom: 1px solid #eee;
+    }
+  }
